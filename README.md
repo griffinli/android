@@ -8,10 +8,24 @@ Here's how it works:
 
 That's it! It's effective because once you remove distracting apps and access to the wide internet, there's not much left to do on your phone, and no way to re-install them without connecting your phone back to your computer.
 
-If you realize you need to install an app on your phone:
-1. Run "android" in your terminal. This re-installs the Play Store and Chrome.
+If you want to install an app on your phone:
+1. Connect your phone to your computer. Run "android" in your terminal. This re-installs the Play Store and Chrome.
 2. Install and set up the app, as usual
 3. Run "android" in your terminal again to uninstall the Play Store and Chrome.
+
+### Prerequisites
+
+1. Your phone needs to have USB debugging enabled.
+2. Your computer needs to have ADB installed. You must be able to run `adb start-server` without root.
+
+If you can't run `adb start-server` without root, try the following:
+
+On Ubuntu/Debian, you may need to run:  
+`sudo groupadd plugdev`  
+`sudo usermod -aG plugdev $USER`
+
+On Fedora, if you installed ADB through `dnf install android-tools`, you may need to run:  
+`sudo ln -s /usr/share/doc/android-tools/51-android.rules /etc/udev/rules.d`
 
 ### Installation
 
