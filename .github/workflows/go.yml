@@ -26,3 +26,8 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+
+    - name: Upload executable
+      uses: actions/upload-artifact@v4
+      with:
+        path: android
